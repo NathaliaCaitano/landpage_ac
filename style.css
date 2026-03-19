@@ -1,0 +1,392 @@
+/* ================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
+================================================ */
+:root {
+    --gold: #D4AF37;
+    --white: #ffffff;
+    --black: #0a0a0a;
+    --grey: #f9f9f9;
+    --max-width: 1440px; /* Trava para o conteúdo não espalhar em monitores 4K */
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--white); 
+    color: #1a1a1a; 
+    overflow-x: hidden; 
+}
+
+/* CONTAINER CENTRALIZADOR (Para seções de texto e fotos) */
+.main-container, .header-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 5%;
+}
+
+/* ================================================
+   2. HEADER (MENU)
+================================================ */
+.header { 
+    display: flex; 
+    align-items: center; 
+    position: fixed; 
+    width: 100%; 
+    z-index: 1000; 
+    background: rgba(255,255,255,0.95); 
+    height: 80px;
+    border-bottom: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.header-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.logo a { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    text-decoration: none; 
+    color: var(--black); 
+}
+
+.logo img { height: 40px; }
+
+.logo span { 
+    font-family: 'Playfair Display'; 
+    font-weight: 700; 
+    letter-spacing: 2px; 
+    font-size: 1rem; 
+}
+
+.nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px; 
+}
+
+.nav a { 
+    text-decoration: none; 
+    color: var(--black); 
+    font-size: 0.75rem; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+/* ================================================
+   3. HERO (VÍDEO DE CAPA)
+================================================ */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    background: var(--black); 
+    color: var(--white); 
+    position: relative; 
+}
+
+.video-container { 
+    position: absolute; 
+    inset: 0; 
+    z-index: 1; 
+    opacity: 0.5; 
+}
+
+.hero-video { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.hero-overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: linear-gradient(75deg, rgba(0,0,0,0.9) 30%, transparent); 
+    z-index: 2; 
+}
+
+.hero-content { 
+    position: relative; 
+    z-index: 3; 
+    max-width: 700px; 
+}
+
+.tagline { 
+    color: var(--gold); 
+    letter-spacing: 5px; 
+    text-transform: uppercase; 
+    font-size: 0.8rem; 
+    margin-bottom: 20px; 
+    display: block; 
+}
+
+h1 { 
+    font-family: 'Playfair Display'; 
+    font-size: clamp(2.5rem, 6vw, 4.2rem); 
+    line-height: 1.1; 
+    margin-bottom: 30px; 
+}
+
+.italic { font-style: italic; font-weight: 400; }
+
+.hero-btns { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+
+.btn-cta { 
+    background: var(--gold); 
+    color: #fff; 
+    padding: 18px 35px; 
+    text-decoration: none; 
+    font-weight: 700; 
+    border-radius: 4px; 
+    transition: 0.3s; 
+}
+
+.btn-cases, .btn-cases:visited { 
+    color: var(--white) !important; 
+    text-decoration: none; 
+    border-bottom: 1px solid var(--gold); 
+    padding-bottom: 5px; 
+    font-weight: 600; 
+}
+
+/* ================================================
+   4. FAIXA DE LOGOS (EFEITO INFINITO TELA CHEIA)
+================================================ */
+.logos-slider {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #fff;
+    padding: 60px 0;
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.logos-track {
+    display: flex;
+    width: max-content; /* Ocupa o tamanho total das logos */
+    gap: 100px;
+    animation: scrollInfinite 30s linear infinite;
+}
+
+.logos-track img {
+    height: 35px;
+    filter: grayscale(1);
+    opacity: 0.4;
+    flex-shrink: 0;
+}
+
+@keyframes scrollInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Move metade do conteúdo duplicado */
+}
+
+/* Máscara de degradê lateral */
+.logos-slider::before, .logos-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+.logos-slider::before { left: 0; background: linear-gradient(to right, white, transparent); }
+.logos-slider::after { right: 0; background: linear-gradient(to left, white, transparent); }
+
+/* ================================================
+   5. SEÇÃO SOBRE
+================================================ */
+.about { padding: 120px 0; }
+
+.about-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; 
+    align-items: center; 
+}
+
+.tagline-gold { 
+    color: var(--gold); 
+    font-weight: 700; 
+    font-size: 0.8rem; 
+    letter-spacing: 2px; 
+}
+
+.about h2 { 
+    font-family: 'Playfair Display'; 
+    font-size: 2.8rem; 
+    margin: 25px 0; 
+    line-height: 1.2; 
+}
+
+.about-image img { 
+    width: 100%; 
+    border-radius: 4px; 
+    box-shadow: 30px 30px 0 var(--grey); 
+}
+
+/* ================================================
+   6. DEPOIMENTOS
+================================================ */
+.testimonials { 
+    padding: 100px 0; 
+    background: var(--grey); 
+    text-align: center; 
+}
+
+.section-title span {
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+}
+
+.testimonial-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-top: 50px; 
+}
+
+.testimonial-card { 
+    background: #fff; 
+    padding: 50px 40px; 
+    border-radius: 8px; 
+    text-align: left; 
+}
+
+.testimonial-card p { 
+    font-style: italic; 
+    color: #444; 
+    line-height: 1.8; 
+    margin-bottom: 25px; 
+}
+
+.testimonial-card strong { display: block; margin-bottom: 5px; }
+
+.testimonial-card span { 
+    color: var(--gold); 
+    font-weight: 700; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+}
+
+/* ================================================
+   7. PORTFÓLIO (CASES)
+================================================ */
+.portfolio { padding: 100px 0; text-align: center; }
+
+.portfolio .section-title h2 {
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.cases-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    gap: 30px; 
+}
+
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.case-card img { 
+    width: 100%; 
+    height: 500px; 
+    object-fit: cover; 
+    transition: 1.2s cubic-bezier(0.17, 0.67, 0.83, 0.67); 
+}
+
+.case-card:hover img { transform: scale(1.05); }
+
+.case-card h3 { 
+    font-family: 'Playfair Display'; 
+    margin-top: 20px; 
+    font-size: 1.2rem; 
+}
+
+/* ================================================
+   8. CONTATO (FINAL CTA)
+================================================ */
+.final-cta { padding: 100px 0; text-align: center; }
+
+.cta-box { 
+    background: var(--black); 
+    padding: 100px 50px; 
+    border-radius: 8px; 
+    color: var(--white); 
+    border-top: 4px solid var(--gold);
+}
+
+.cta-box h2 {
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.contact-links { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    margin-top: 50px; 
+    flex-wrap: wrap; 
+}
+
+.contact-item.gold-border, .contact-item.gold-border:visited { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    border: 1px solid var(--gold); 
+    padding: 20px 40px; 
+    border-radius: 4px; 
+    text-decoration: none; 
+    color: #fff !important; 
+    min-width: 320px; 
+    text-align: left; 
+    transition: 0.3s;
+}
+
+.contact-item:hover { 
+    background: rgba(212,175,55,0.15); 
+    transform: translateY(-5px); 
+}
+
+.contact-item i { color: var(--gold); font-size: 1.5rem; }
+
+/* ================================================
+   9. FOOTER E RESPONSIVIDADE
+================================================ */
+.footer { padding: 50px; opacity: 0.4; font-size: 0.8rem; text-align: center; }
+
+@media (max-width: 992px) {
+    .about-grid { grid-template-columns: 1fr; gap: 50px; text-align: center; }
+    .about-image img { box-shadow: none; }
+    .nav { display: none; }
+    .hero-content { text-align: center; margin: 0 auto; }
+    .hero-btns { justify-content: center; }
+}
