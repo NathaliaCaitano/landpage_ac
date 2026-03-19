@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aimê Carvalho | Estratégia Visual & Posicionamento</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Aimê Carvalho | Estratégia Visual Elite</title>
+    <link rel="icon" type="image/png" href="img/logo-icon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="header">
-        <div class="header-container">
+        <div class="container header__container">
             <div class="logo">
-                <a href="#">
-                    <span>AIMÊ CARVALHO</span>
-                </a>
+                <img src="img/logo-icon.png" alt="Logo Aimê Carvalho" class="logo__img">
+                <span>AIMÊ CARVALHO</span>
             </div>
-            <nav class="nav">
-                <ul>
+            <button class="menu-toggle" id="menu-btn" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav" id="nav-menu">
+                <ul class="nav__list">
                     <li><a href="#sobre">O Método</a></li>
                     <li><a href="#portfolio">Cases</a></li>
                     <li><a href="#contato">Consultoria</a></li>
@@ -27,85 +31,85 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div class="video-container">
-            <video autoplay muted loop playsinline class="hero-video">
-                <source src="video/showreel-final.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="main-container">
-            <div class="hero-content">
-                <span class="tagline">Direção de Imagem & Elite Filmmaking</span>
-                <h1>A imagem que comunica sua <span class="italic">autoridade</span>.</h1>
-                <div class="hero-btns">
-                    <a href="#contato" class="btn-cta">Solicitar Orçamento</a>
-                    <a href="#portfolio" class="btn-cases">Ver Cases</a>
+    <main>
+        <section class="hero">
+            <div class="container hero__grid">
+                <div class="hero__text">
+                    <span class="tagline">Estratégia Visual Elite</span>
+                    <h1>A imagem que comunica sua <br><i>autoridade</i>.</h1>
+                    <a href="#contato" class="btn-gold">Aplicar para Consultoria VIP</a>
+                </div>
+                <div class="hero__card-area">
+                    <div class="card-marker hero-main">
+                        <p>SHOWREEL DE IMPACTO:<br>VÍDEO DE ALTA PRODUÇÃO AQUI</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <div class="logos-slider">
-        <div class="logos-track">
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
-            <div class="logo-item">MARCA</div>
+        <div class="ticker">
+            <div class="ticker__track">
+                <div class="ticker__item">MARCA 01</div>
+                <div class="ticker__item">MARCA 02</div>
+                <div class="ticker__item">MARCA 03</div>
+                <div class="ticker__item">MARCA 04</div>
+                <div class="ticker__item">MARCA 01</div>
+                <div class="ticker__item">MARCA 02</div>
+                <div class="ticker__item">MARCA 03</div>
+                <div class="ticker__item">MARCA 04</div>
+            </div>
         </div>
-    </div>
 
-    <section id="sobre" class="about">
-        <div class="main-container">
+        <section id="sobre" class="section container">
             <div class="about-grid">
-                <div class="about-text">
-                    <span class="tagline-gold">MÉTODO ARQUETÍPICO</span>
-                    <h2>Não é sobre um clique. <br>É sobre <i>posicionamento</i>.</h2>
-                    <p>Através da Direção de Arquétipos, eu guio cada movimento seu para que sua imagem transmita poder e confiança absoluta.</p>
+                <div class="about__content">
+                    <span class="tagline">O Método</span>
+                    <h2>Sua imagem é seu <br>maior <i>ativo</i>.</h2>
+                    <p>Direção técnica e artística para líderes que desejam dominar seu mercado através da imagem arquetípica.</p>
                 </div>
-                <div class="about-image">
-                    <div class="placeholder-img">FOTO EM BREVE</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="portfolio">
-        <div class="main-container">
-            <div class="cases-grid">
-                <div class="case-card">
-                    <div class="case-placeholder">CASE 01</div>
-                    <h3>Corporate Branding</h3>
-                </div>
-                <div class="case-card">
-                    <div class="case-placeholder">CASE 02</div>
-                    <h3>Fashion Film</h3>
+                <div class="card-marker portrait-card">
+                    <p>RETRATO DE AUTORIDADE:<br>FOTO AIMÊ EM AMBIENTE EDITORIAL</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contato" class="final-cta">
-        <div class="main-container">
-            <div class="cta-box">
-                <h2>Pronta para elevar sua <i>presença digital</i>?</h2>
-                <div class="contact-links">
-                    <a href="#" class="contact-item">
-                        <i class="fab fa-whatsapp"></i> WhatsApp VIP
-                    </a>
+        <section id="portfolio" class="section container">
+            <div class="portfolio-grid">
+                <div class="card-marker media-card">
+                    <p>VÍDEO DE BASTIDORES:<br>PROCESSO CRIATIVO</p>
+                </div>
+                <div class="card-marker media-card">
+                    <p>FASHION FILM:<br>RESULTADO FINAL</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
-        <p>&copy; 2026 Aimê Carvalho. Crafted by Nathalia Caitano.</p>
+        <section class="section container">
+            <h2 class="center-title">Reconhecimento</h2>
+            <div class="testimonial-grid">
+                <div class="test-card">
+                    <div class="user-placeholder">FOTO EMPRESÁRIO</div>
+                    <p>"Impacto imediato no meu posicionamento digital e autoridade de marca."</p>
+                    <strong>Nome do Empresário</strong>
+                </div>
+                <div class="test-card">
+                    <div class="user-placeholder">FOTO EMPRESÁRIO</div>
+                    <p>"A melhor decisão estratégica para minha imagem este ano."</p>
+                    <strong>Nome do Empresário</strong>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contato" class="footer">
+        <div class="container center-text">
+            <h2>Pronta para o próximo nível?</h2>
+            <div class="footer__btns">
+                <a href="#" class="btn-gold">Aplicar para Consultoria VIP</a>
+                <a href="#" class="btn-outline"><i class="fab fa-instagram"></i> Instagram Bastidores</a>
+            </div>
+            <p class="copy">© 2026 Aimê Carvalho | By Nathalia Caitano</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
